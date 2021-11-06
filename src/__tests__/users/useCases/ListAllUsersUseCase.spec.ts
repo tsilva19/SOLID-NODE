@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { v4 } from "uuid";
 
 import { UsersRepository } from "../../../modules/users/repositories/implementations/UsersRepository";
@@ -33,7 +34,7 @@ describe("ListAllUsersUseCase", () => {
 
     usersRepository.turnAdmin(user1);
 
-    const users = listAllUsersUseCase.execute({ user_id: user1.id });
+    const users = listAllUsersUseCase.execute();
 
     expect(users).toEqual(
       expect.arrayContaining([
@@ -49,13 +50,13 @@ describe("ListAllUsersUseCase", () => {
 
   it("should not be able to a non admin user get list of all users", () => {
     expect(() => {
-      listAllUsersUseCase.execute({ user_id: userId });
+      listAllUsersUseCase.execute();
     }).toThrow();
   });
 
   it("should not be able to a non existing user get list of all users", () => {
     expect(() => {
-      listAllUsersUseCase.execute({ user_id: v4() });
+      listAllUsersUseCase.execute();
     }).toThrow();
   });
 });

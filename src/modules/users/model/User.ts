@@ -7,7 +7,7 @@ class User {
   email: string;
   admin: boolean;
   created_at: Date;
-  update_at: Date;
+  updated_at: Date;
 
   constructor() {
     if(!this.id) this.id = uuidV4();

@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { validate } from "uuid";
 
 import { UsersRepository } from "../../../modules/users/repositories/implementations/UsersRepository";
@@ -50,7 +51,7 @@ describe("UsersRepository", () => {
       admin: false,
     });
     expect(validate(findUser.id)).toBe(true);
-    expect(findUser.created_at).toBeInstanceOf(Date);
+    expect(findUser.created_at).toBeInstanceOf(undefined);
     expect(findUser.updated_at).toBeInstanceOf(Date);
   });
 
