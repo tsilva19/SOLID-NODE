@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Router } from "express";
 
 import { createUserController } from "../modules/users/useCases/createUser";
@@ -23,4 +24,5 @@ usersRoutes.get("/", (request, response) =>
   listAllUsersController.handle(request, response)
 );
 
+// eslint-disable-next-line prettier/prettier
 export { usersRoutes };
